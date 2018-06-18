@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * [Node 8.11.2](https://nodejs.org/en/download/)
 * npm 6.1.0
 
-> If you have an older version of Node.js and NPM, you need to update it. smartbeings-task only supports Node 6.1.0 or higher versions.
+> If you have an older version of Node.js and NPM, you need to update it. smartbeings-task only supports Node 8.11.2 or higher versions.
 
 ## Installation
 
