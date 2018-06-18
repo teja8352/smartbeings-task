@@ -1,6 +1,6 @@
 # SmartBeings Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0 and used [mLab service] (https://docs.mlab.com/) (Database-as-a-Service for MongoDB).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0 and used [mLab service](https://docs.mlab.com/) (Database-as-a-Service for MongoDB).
 
 ## Prerequisite
 
@@ -23,7 +23,7 @@ nodemon server
 ```
 If all the packages and modules installed successfully, you need to open default web browser and you can see the default smartbeings-task application at `http://localhost:8080`. This is the default port unless you change that manually.
 
-## Additional Tools used in MEAN
+## Additional Tools used in smartbeings-task
 
 * [Mongoose](http://mongoosejs.com/) - Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 * [Bootstrap](http://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
