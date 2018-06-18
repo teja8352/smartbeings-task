@@ -1,27 +1,30 @@
-# Task
+# SmartBeings Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0 and used [mLab service] (https://docs.mlab.com/) (Database-as-a-Service for MongoDB).
 
-## Development server
+## Prerequisite
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Internet
+* [MongoDB](https://www.mongodb.org/downloads)
+* [Node 8.11.2](https://nodejs.org/en/download/)
+* npm 6.1.0
 
-## Code scaffolding
+> If you have an older version of Node.js and NPM, you need to update it. smartbeings-task only supports Node 6.1.0 or higher versions.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+To see or use this application, you need to clone the base smartbeings-task repository from Github. Following the steps below will guide you to install the latest smartbeings-task version.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+git clone --depth 1 https://github.com/teja8352/smartbeings-task.git 
+cd smartbeings-task
+npm install  
+nodemon server  
+```
+If all the packages and modules installed successfully, you need to open default web browser and you can see the default smartbeings-task application at `http://localhost:8080`. This is the default port unless you change that manually.
 
-## Running unit tests
+## Additional Tools used in MEAN
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* [Mongoose](http://mongoosejs.com/) - Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+* [Bootstrap](http://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
+* [TypeScript](https://www.typescriptlang.org/) - TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
