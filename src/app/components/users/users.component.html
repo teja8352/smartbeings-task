@@ -1,0 +1,217 @@
+<section class="section">
+
+  <!--    Content Top Part Start's-->
+  <div class="row content_top p-4">
+    <div class="col">
+      <div class='row justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center'>
+        <h1>User Directory</h1>
+      </div>
+    </div>
+    <div class="col">
+      <div class='row justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center'>
+        <button class='btn btn-primary p-2' data-toggle="modal" data-target="#insertModal">
+          <i class="fas fa-plus" style="color: #fff !important"></i> Add New User</button>
+      </div>
+
+      <!-- Insert Modal -->
+      <div class="modal fade bd-example-modal-lg" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="insertModalLabel">Add New User</h5>
+              <button type="button" class="close" #closeBtn data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body p-5">
+              <form [formGroup]="insertForm" (ngSubmit)="onSubmitInsert()">
+                <div class='row'>
+                  <div class='col-4'>
+                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                      <div class="card-body">
+                        <div class="row justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center">
+                          <div class="text-center">
+                            <img src="https://cdn-images-1.medium.com/max/1412/1*V3Kfghg_jIV0ubxmAnCXBA.jpeg" class="profile-image" alt="">
+                          </div>
+                        </div>
+                        <div class="row mt-2 justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center">
+                          <button type="button" class="btn btn-primary btn-block">Upload</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='col-8'>
+                    <div class="form-group">
+                      <label for="insertUserName1">User Name</label>
+                      <input type="text" class="form-control" id="insertUserName1" formControlName='username' aria-describedby="usernameHelp" placeholder="enter username">
+                      <div *ngIf="insertForm.controls['username'].invalid && (insertForm.controls['username'].dirty || insertForm.controls['username'].touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="insertForm.controls['username'].errors.required">
+                          User Name is required.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="insertAddress1">Address</label>
+                      <input type="text" class="form-control" id="insertAddress1" formControlName='address' placeholder="enter address">
+                      <div *ngIf="insertForm.controls['address'].invalid && (insertForm.controls['address'].dirty || insertForm.controls['address'].touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="insertForm.controls['address'].errors.required">
+                          Address is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="insertContact1">Contact</label>
+                      <input type="tel" class="form-control" id="insertContact1" formControlName='contact' aria-describedby="contactHelp" placeholder="enter contact">
+                      <div *ngIf="insertForm.controls['contact'].invalid && (insertForm.controls['contact'].dirty || insertForm.controls['contact'].touched)"
+                        class="alert alert-danger"> Contact should be minimum 10 digits.
+                        <div *ngIf="insertForm.controls['contact'].errors.required">
+                          Contact is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="insertEmail1">Email</label>
+                      <input type="email" class="form-control" id="insertEmail1" formControlName='email' aria-describedby="emailHelp" placeholder="enter email">
+                      <div *ngIf="insertForm.controls['email'].invalid && (insertForm.controls['email'].dirty || insertForm.controls['email'].touched)"
+                        class="alert alert-danger"> Please, enter a valid email.
+                        <div *ngIf="insertForm.controls['email'].errors.required">
+                          Email is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!insertForm.valid">Add new user</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--    Content Top Part End's-->
+
+  <!--    Content Bottom Part Start's-->
+
+  <div class="row no-gutters mt-5 justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center">
+    <div class="col-md-10 content_bottom rounded">
+      <div class='table-responsive text-left'>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">USER NAME</th>
+              <th scope="col">ADDRESS</th>
+              <th scope="col">CONTACT</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users;let i=index;">
+              <td>
+                <img class='avatar-image' src='https://cdn-images-1.medium.com/fit/c/75/75/1*nbJ41jD1-r2Oe6FsLjKaOg.png'> {{user.username}}
+              </td>
+              <td>{{user.address}}</td>
+              <td>{{user.contact}}</td>
+              <td>{{user.email}}</td>
+              <td data-toggle="collapse" [attr.data-target]="'#collapseExample' + i" aria-expanded="false" aria-controls="collapseExample">
+                <span class='table_span'>
+                  <i class="fas fa-ellipsis-h"></i>
+                </span>
+                <div class="collapse mt-3" id="collapseExample{{i}}">
+                  <div class="card card-body" style="cursor: pointer;">
+                    <a class='m-2' data-toggle="modal" (click)='selectedUser(user)' data-target="#updateModal">
+                      <i class="fas fa-edit"></i> Edit User Details</a>
+                    <a class='m-2' (click)='deleteUser(user._id)'>
+                      <i class="fas fa-trash" style="color: #d0021b !important"></i> Delete User</a>
+                  </div>
+                </div>
+
+                <!-- Update Modal -->
+                <div class="modal fade bd-example-modal-lg" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Edit User</h5>
+                        <button type="button" class="close" #closeBtn data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body p-5">
+                        <form [formGroup]="updateForm" (ngSubmit)="onSubmitUpdate(user._id)">
+                          <div class='row'>
+                            <div class='col-4'>
+                              <div class="card bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                  <div class="row justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center">
+                                    <div class="text-center profile-image">
+                                      <img src="https://cdn-images-1.medium.com/max/1412/1*V3Kfghg_jIV0ubxmAnCXBA.jpeg" class="profile-image" alt="">
+                                    </div>
+                                  </div>
+                                  <div class="row mt-2 justify-content-md-center justify-content-sm-center justify-content-lg-center justify-content-xl-center">
+                                    <button type="button" class="btn btn-light m-1">Upload</button>
+                                    <button type="button" class="btn btn-light m-1">
+                                      <i class="fas fa-trash" style="color: #d0021b !important"></i>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class='col-8'>
+                              <div class="form-group">
+                                <label for="updateUserName">User Name</label>
+                                <input type="text" class="form-control" formControlName='username' id="updateUserName" aria-describedby="usernameHelp">
+                              </div>
+                              <div class="form-group">
+                                <label for="updateAddress">Address</label>
+                                <input type="text" class="form-control" formControlName='address' id="updateAddress">
+                              </div>
+                            </div>
+                          </div>
+                          <div class='row'>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="updateContact">Contact</label>
+                                <input type="tel" class="form-control" id="updateContact" formControlName='contact' aria-describedby="contactHelp">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="updateEmail">Email</label>
+                                <input type="email" class="form-control" id="updateEmail" formControlName='email' aria-describedby="emailHelp">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]='!updateForm.valid'>Save Changes</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <!--    Content Bottom Part End's-->
+</section>

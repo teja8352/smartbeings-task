@@ -1,0 +1,56 @@
+/*Nav Bar*/
+
+.navbar_main {
+  display: flex;
+  width: 100%;
+  height: 5%;
+  background: #211645;
+  color: white !important;
+}
+
+.navbar_main a {
+  color: white;
+}
+
+.navbar_left {
+  float: left;
+  min-width: 20%;
+}
+
+.navbar_left i {
+  margin: 15px;
+}
+
+.navbar_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-width: 60%;
+  color: #ccc !important;
+}
+
+.navbar_center a {
+  color: #ccc;
+}
+
+.navbar_right {
+  padding: 5px;
+  float: right;
+  min-width: 20%;
+}
+
+.navbar_right span {
+  background: #1d123d;
+  border-radius: 100px;
+  margin: 0 5px 0 10px;
+  float: left;
+}
+
+/* Active Link */
+
+.active-link {
+  border-bottom: 4px solid #ccc;
+  color: white !important;
+}
+
